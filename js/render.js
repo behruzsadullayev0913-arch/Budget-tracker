@@ -1,66 +1,61 @@
-import { storage } from "./storage.js";
-import { render } from "./render.js";
-import { api } from "./api.js";
+export const render = {
+  updateStats(transactions) {
+    const income = transactions
+      .filter((t) => t.transaction_type === "income")
+      .reduce((sum, t) => sum + t.amount_value, 0);
 
-let transactions = [];
-let currentFilter = "all";
+    const expense = transactions
+      .filter((t) => t.transaction_type === "expense")
+      .reduce((sum, t) => sum + t.amount_value, 0);
 
-async function init() {
-  try {
-    transactions = await api.fetchData();
-    refreshUI();
-  } catch (error) {
-    render.showNotification(error);
-  }
-}
+    const balance = income - expense;
 
-function refreshUI() {
-  render.updateStats(transactions);
-  render.displayList(transactions, deleteRecord, currentFilter);
-}
+    document.getElementById(
+      "total-income"
+    ).innerText = `${income.toLocaleString("ru-RU")} so'm`;
+    document.getElementById(
+      "total-expense"
+    ).innerText = `${expense.toLocaleString("ru-RU")} so'm`;
+    document.getElementById(
+      "total-balance"
+    ).innerText = `${balance.toLocaleString("ru-RU")} so'm`;
+  },
 
-function deleteRecord(id) {
-  transactions = transactions.filter((t) => t.record_id !== id);
-  storage.save(transactions);
-  refreshUI();
-}
+  displayList(transactions, onDelete, filter = "all") {
+    const listElement = document.getElementById("transaction-list");
+    listElement.innerHTML = "";
 
-document.getElementById("finance-form").addEventListener("submit", (e) => {
-  e.preventDefault();
+    const filtered = transactions.filter((t) =>
+      filter === "all" ? true : t.transaction_type === filter
+    );
 
-  const desc = document.getElementById("item_desc").value.trim();
-  const amount = parseFloat(document.getElementById("amount_value").value);
-  const type = document.getElementById("transaction_type").value;
+    filtered.forEach((t) => {
+      const li = document.createElement("li");
+      li.className = "list-item";
+      const colorClass =
+        t.transaction_type === "income" ? "text-success" : "text-danger";
 
-  // Validatsiya (Bo'sh qiymat kiritishga yo'l qo'ymaydi)
-  if (!desc || isNaN(amount) || amount <= 0) {
-    render.showNotification("Iltimos, nomini va summani to'g'ri kiriting!");
-    return;
-  }
-
-  const newRecord = {
-    record_id: Date.now(),
-    item_desc: desc,
-    amount_value: amount,
-    transaction_type: type,
-  };
-
-  transactions.push(newRecord);
-  storage.save(transactions);
-  refreshUI();
-  e.target.reset();
-});
-
-document.querySelectorAll(".filter-btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    document.querySelectorAll(".filter-btn").forEach((b) => {
-      b.classList.remove("active");
+      li.innerHTML = `
+                <span>${
+                  t.item_desc
+                } - <strong class="${colorClass}">${t.amount_value.toLocaleString(
+        "ru-RU"
+      )} so'm</strong></span>
+                <button class="del-btn" data-id="${
+                  t.record_id
+                }">O'chirish</button>
+            `;
+      li.querySelector(".del-btn").onclick = () => onDelete(t.record_id);
+      listElement.appendChild(li);
     });
-    e.target.classList.add("active");
+  },
 
-    currentFilter = e.target.getAttribute("data-filter");
-    refreshUI();
-  });
-});
-
-init();
+  showNotification(message) {
+    const container = document.getElementById("notification-container");
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.innerText = message;
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  },
+};

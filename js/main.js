@@ -25,10 +25,8 @@ function deleteRecord(id) {
   refreshUI();
 }
 
-const financeForm = document.getElementById("finance-form");
-financeForm.addEventListener("submit", (e) => {
+document.getElementById("finance-form").addEventListener("submit", (e) => {
   e.preventDefault();
-
   const desc = document.getElementById("item_desc").value.trim();
   const amount = parseFloat(document.getElementById("amount_value").value);
   const type = document.getElementById("transaction_type").value;
@@ -51,10 +49,11 @@ financeForm.addEventListener("submit", (e) => {
   e.target.reset();
 });
 
-const filterButtons = document.querySelectorAll(".filter-btn");
-filterButtons.forEach((btn) => {
+document.querySelectorAll(".filter-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    filterButtons.forEach((b) => b.classList.remove("active"));
+    document
+      .querySelectorAll(".filter-btn")
+      .forEach((b) => b.classList.remove("active"));
     e.target.classList.add("active");
     currentFilter = e.target.getAttribute("data-filter");
     refreshUI();
