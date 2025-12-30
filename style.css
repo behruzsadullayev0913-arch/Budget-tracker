@@ -24,13 +24,14 @@ body {
 }
 
 .main-title {
+  color: var(--text-dark);
   display: flex;
   justify-content: center;
 }
 
 .stats-card {
-  min-height: ;
-  background: var(--white);
+  min-height: 95vh;
+  background: var(--bg-light);
   display: flex;
   justify-content: center;
   align-items: center;
