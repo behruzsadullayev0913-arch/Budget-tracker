@@ -10,25 +10,35 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="app-container">
-      <h1 class="main-title">Budget Tracker</h1>
+      <h1 class="main-title">
+        <i class="fa-solid fa-file-invoice-dollar"></i> Budget Tracker
+      </h1>
 
       <div class="stats-card">
         <div class="stat-row">
           <span
-            >Daromad:
+            ><i class="fas fa-arrow-trend-up"></i> Daromad:
             <strong id="total-income" class="text-success">0 so'm</strong></span
           >
           <span
-            >Xarajat:
+            ><i class="fas fa-arrow-trend-down"></i> Xarajat:
             <strong id="total-expense" class="text-danger">0 so'm</strong></span
           >
         </div>
         <div class="stat-balance">
-          Balans: <span id="total-balance" class="text-primary">0 so'm</span>
+          <i class="fas fa-wallet"></i> Balans:
+          <span id="total-balance" class="text-primary">0 so'm</span>
         </div>
       </div>
 
@@ -39,13 +49,21 @@
           <option value="income">Daromad</option>
           <option value="expense">Xarajat</option>
         </select>
-        <button type="submit" class="btn-primary">Qo'shish</button>
+        <button type="submit" class="btn-primary">
+          <i class="fa-solid fa-plus"></i> Qo'shish
+        </button>
       </form>
 
       <div class="filter-group">
-        <button class="filter-btn active" data-filter="all">Hammasi</button>
-        <button class="filter-btn" data-filter="income">Daromadlar</button>
-        <button class="filter-btn" data-filter="expense">Xarajatlar</button>
+        <button class="filter-btn active" data-filter="all">
+          <i class="fa-solid fa-list-ul"></i> Hammasi
+        </button>
+        <button class="filter-btn" data-filter="income">
+          <i class="fa-solid fa-money-bill-1-wave"></i> Daromadlar
+        </button>
+        <button class="filter-btn" data-filter="expense">
+          <i class="fa-solid fa-receipt"></i> Xarajatlar
+        </button>
       </div>
 
       <ul id="transaction-list" class="records-list"></ul>
