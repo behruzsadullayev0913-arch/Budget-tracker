@@ -62,8 +62,3 @@ Loyihani o'z kompyuteringizga yuklab olish:
 - [Telegram](https://t.me/.)
 
 ---
-
-```
-
-```
-
