@@ -1,60 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budget tracker</title>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/lib.min.js"
-      integrity="sha512-LBqpfYKfymp3VEoHOQharES5j6UyXzUP0Td5jk5j1Ekm9tsbAoGUi5VaGA+0gdAlqKvAUb+7iFBe6qQQ7Jwk0Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="main-title"><h1>Moliya menejeri</h1></div>
-      <div class="card">
-        <div class="stats-card">
-          <span class=""
+    <div class="app-container">
+      <h1 class="main-title">Moliya Menejeri</h1>
+
+      <div class="stats-card">
+        <div class="stat-row">
+          <span
             >Daromad:
-            <strong id="total-income" class="income">0 so'm</strong></span
+            <strong id="total-income" class="text-success">0 so'm</strong></span
           >
-          <span class=""
+          <span
             >Xarajat:
-            <strong id="total-expense" class="expense">0 so'm</strong></span
-          >
-          <span class="text-[var(--primary-color)]"
-            >Balans:
-            <strong id="total-balance" class="balance">0 so'm</strong></span
+            <strong id="total-expense" class="text-danger">0 so'm</strong></span
           >
         </div>
-
-        <div class="input-card">
-          <br />
-          <br />
-          <label>Category</label> <br />
-          <input type="text" placeholder="Category" /> <br />
-          <br />
-          <label>Nechi so'm</label> <br />
-          <input type="number" placeholder="son kiriting ..." /> <br />
-          <br />
-          <label>Xarajat yoki Daromad</label> <br />
-          <select id="select">
-            <option value="Daromad">Daromad</option>
-            <option value="Xarajat">Xarajat</option></select
-          ><br />
-          <br />
-
-          <button type="submit">Qo'shish</button>
+        <div class="stat-balance">
+          Balans:
+          <span id="total-balance" class="text-primary">0 so'm</span> so'm
         </div>
       </div>
 
-      <div class="filter-buttons">
-        <button class="filter-button" data-filter="all">Hammasi</button>
-        <button class="filter-button" data-filter="income">Daromad</button>
-        <button class="filter-button" data-filter="expense">Xarajat</button>
+      <form id="finance-form" class="transaction-form">
+        <input type="text" id="item_desc" placeholder="Xarid nomi" required />
+        <input type="number" id="amount_value" placeholder="Summa" required />
+
+        <select id="transaction_type">
+          <option value="income">Daromad</option>
+          <option value="expense">Xarajat</option>
+        </select>
+
+        <button type="submit" class="btn-primary">Qo'shish</button>
+      </form>
+
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">Hammasi</button>
+        <button class="filter-btn" data-filter="income">Daromadlar</button>
+        <button class="filter-btn" data-filter="expense">Xarajatlar</button>
       </div>
+
+      <ul id="transaction-list" class="records-list"></ul>
     </div>
   </body>
 </html>
