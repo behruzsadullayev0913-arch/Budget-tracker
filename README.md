@@ -60,5 +60,3 @@ Loyihani o'z kompyuteringizga yuklab olish:
 
 - [GitHub](https://github.com/behruzsadullayev0913-arch)
 - [Telegram](https://t.me/.)
-
----
