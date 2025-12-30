@@ -34,14 +34,21 @@ Budget Tracker — bu sizning shaxsiy moliyaviy yordamchingiz. Daromad va xaraja
 ## Arxitektura
 
 ```text
-budget-tracker/
-├── index.html          # Asosiy HTML strukturasi
-├── style.css           # Ilova dizayni va uslublari
-└── js/                 # Barcha mantiqiy modullar papkasi
-    ├── main.js         # Markaziy boshqaruvchi (Controller)
-    ├── api.js          # Ma'lumotlar bilan ishlash mantiqi
-    ├── render.js       # UI elementlarini dinamik chizish
-    └── storage.js      # LocalStorage (ma'lumotlarni saqlash)
+BUDGET-TRACKER/
+├── assets/
+│   ├── images/
+│   │   └── Budget-tracker.png
+│   └── svg/
+│       ├── dollar xaltasi.svg
+│       └── wallet.svg
+├── js/
+│   ├── api.js           # Ma'lumotlar (server) bilan ishlash
+│   ├── main.js          # Loyihaning asosiy boshqaruv mantiqi
+│   ├── render.js        # HTML elementlarini yaratish va yangilash
+│   └── storage.js       # LocalStorage bilan ishlash (saqlash)
+├── index.html           # Loyihaning asosiy skeleti
+├── README.md            # Loyiha haqida yo'riqnoma
+└── style.css            # Vizual dizayn (CSS)
 ```
 
 ## ⚙️ O'rnatish
