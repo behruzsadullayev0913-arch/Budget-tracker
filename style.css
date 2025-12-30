@@ -1,37 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
 
 :root {
-    --primary-color: #3498db;
-    --success-color: #2ecc71;
-    --danger-color: #e74c3c;
-    --secondary-color: #95a5a6;
-    --text-dark: #2c3e50;
-    --bg-light: #F9FAFb;
-    --white: #ffffff;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --border-radius: 12px;
+  --primary-color: #3498db;
+  --success-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --secondary-color: #95a5a6;
+  --text-dark: #2c3e50;
+  --bg-light: #f9fafb;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #F9FAFb;
-    font-family: 'google-sans', sans-serif;
-}   
+  background: #f9fafb;
+  font-family: "google-sans", sans-serif;
+}
 
 .main-title {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .stats-card {
-    background: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: ;
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
