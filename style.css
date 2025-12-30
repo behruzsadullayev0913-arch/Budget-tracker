@@ -25,6 +25,10 @@ body {
   min-height: 100vh;
 }
 
+.fa-sack-dollar {
+  color: #f3d082; /* Rasmdagi kabi sarg'ish rang */
+}
+
 .app-container {
   background: var(--white);
   width: 100%;
@@ -92,10 +96,6 @@ input::placeholder {
   color: #999;
 }
 
-.fa-input {
-  font-family: "Font Awesome 6 Free", sans-serif;
-  font-weight: 900;
-}
 
 input,
 select {
