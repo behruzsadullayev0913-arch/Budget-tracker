@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="app-container">
-      <h1 class="main-title">Moliya Menejeri</h1>
+      <h1 class="main-title">Budget Tracker</h1>
 
       <div class="stats-card">
         <div class="stat-row">
@@ -22,20 +22,17 @@
           >
         </div>
         <div class="stat-balance">
-          Balans:
-          <span id="total-balance" class="text-primary">0 so'm</span> so'm
+          Balans: <span id="total-balance" class="text-primary">0 so'm</span>
         </div>
       </div>
 
       <form id="finance-form" class="transaction-form">
         <input type="text" id="item_desc" placeholder="Xarid nomi" required />
         <input type="number" id="amount_value" placeholder="Summa" required />
-
         <select id="transaction_type">
           <option value="income">Daromad</option>
           <option value="expense">Xarajat</option>
         </select>
-
         <button type="submit" class="btn-primary">Qo'shish</button>
       </form>
 
@@ -47,5 +44,9 @@
 
       <ul id="transaction-list" class="records-list"></ul>
     </div>
+
+    <div id="notification-container"></div>
+
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
