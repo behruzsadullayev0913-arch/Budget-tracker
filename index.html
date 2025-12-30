@@ -14,38 +14,46 @@
   <body>
     <div class="container">
       <div class="main-title"><h1>Moliya menejeri</h1></div>
-      <div class="stats-card">
-        <span class=""
-          >Daromad:
-          <strong id="total-income" class="income">0 so'm</strong></span
-        >
-        <span class=""
-          >Xarajat:
-          <strong id="total-expense" class="expense">0 so'm</strong></span
-        >
-        <span class="text-[var(--primary-color)]"
-          >Balans:
-          <strong id="total-balance" class="balance">0 so'm</strong></span
-        >
+      <div class="card">
+        <div class="stats-card">
+          <span class=""
+            >Daromad:
+            <strong id="total-income" class="income">0 so'm</strong></span
+          >
+          <span class=""
+            >Xarajat:
+            <strong id="total-expense" class="expense">0 so'm</strong></span
+          >
+          <span class="text-[var(--primary-color)]"
+            >Balans:
+            <strong id="total-balance" class="balance">0 so'm</strong></span
+          >
+        </div>
+
+        <div class="input-card">
+          <br />
+          <br />
+          <label>Category</label> <br />
+          <input type="text" placeholder="Category" /> <br />
+          <br />
+          <label>Nechi so'm</label> <br />
+          <input type="number" placeholder="son kiriting ..." /> <br />
+          <br />
+          <label>Xarajat yoki Daromad</label> <br />
+          <select id="">
+            <option value="Daromad">Daromad</option>
+            <option value="Xarajat">Xarajat</option></select
+          ><br />
+          <br />
+
+          <button type="submit">Qo'shish</button>
+        </div>
       </div>
 
-      <div class="input-card">
-        <br />
-        <br />
-        <label>Category</label> <br />
-        <input type="text" placeholder="Category" /> <br />
-        <br />
-        <label>Nechi so'm</label> <br />
-        <input type="number" placeholder="son kiriting ..." /> <br />
-        <br />
-        <label>Xarajat yoki Daromad</label> <br />
-        <select id="">
-          <option value="Daromad">Daromad</option>
-          <option value="Xarajat">Xarajat</option></select
-        ><br />
-        <br />
-
-        <button type="submit">Qo'shish</button>
+      <div class="filter-buttons">
+        <button class="filter-button" data-filter="all">Hammasi</button>
+        <button class="filter-button" data-filter="income">Daromad</button>
+        <button class="filter-button" data-filter="expense">Xarajat</button>
       </div>
     </div>
   </body>

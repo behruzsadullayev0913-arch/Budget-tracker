@@ -29,7 +29,8 @@ body {
   justify-content: center;
 }
 
-.stats-card {
+.card {
+  border: 1px solid blue;
   min-height: 95vh;
   background: var(--bg-light);
   display: flex;
